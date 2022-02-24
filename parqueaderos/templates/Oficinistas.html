@@ -1,0 +1,48 @@
+{% extends "Base.html" %}
+
+{% load static %}
+
+{% block title %} {{nombreEmpresa}} - {{modulos.1}} {% endblock %}
+
+{% block content%}
+<div class="col py-3">
+  <div class="row justify-content-evenly">
+    <button id="newRegister" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="col-4 btn btn-secondary">Nuevo Registro</button>   
+    <div class="col-4 btn btn-secondary">
+      <label class="col-auto btn btn-secondary">Cargar CSV</label>
+     <input type="file" class="form-control col-1" id="customFile" />
+  </div>
+  <hr>
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Placa</th>
+          <th scope="col">Oficina</th>
+          <th scope="col">Due&ntilde;o</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in datosServidor %}
+        <tr>
+          <th scope="row">{{i.placa}}</th>
+          <td>{{i.oficina}}</td>
+          <td>{{i.oficinista}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  sad
+</div>
+{% endblock %}
+
+{% block script %}
+ <script type="text/javascript" src="{% static "js/extras_Oficinistas.js" %}"></script>
+{% endblock %}
+
+{% block modal %}
+  {% include "Modal_Oficinista.html" %}
+{% endblock %}
+
+

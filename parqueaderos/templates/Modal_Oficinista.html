@@ -1,0 +1,38 @@
+<form id="submit">
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Ingrese nuevo oficinista</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <input type="text" class="form-control" id="placa" required="true" name="placa" placeholder="PCA2020">
+          </div>
+            <div>
+<!--Para ver si ya existe un vehiculo
+            <select class="form-control"  name="item_id">
+            {% for entry in placas %}
+            <option value="{{ entry.id }}">{{ entry.placa}}</option>
+             {% endfor %}
+              </select>
+        </div>
+-->
+
+          <div class="mb-3">
+            <input type="text" class="form-control"  id="oficina" name="oficina" required="true" placeholder="101">
+          </div> 
+          <div class="mb-3">
+            <input type="text" class="form-control" id="oficinista" name="oficinista" required="true" placeholder="Juán Perez">
+          </div>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-red" data-bs-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-green">Guardar cambios</button>
+        </div>
+      </div>
+    </div>      
+  </div>
+</form>
