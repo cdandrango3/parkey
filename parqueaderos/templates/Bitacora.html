@@ -5,19 +5,20 @@
 {% block content%}
 <div class="col py-3">
     <div class="row">
-      <div id="option" class="col-md-5 col-xl-5 px-sm-2">
-        <select class="form-select" aria-label="Buscar por">
+      <div  class="col-md-5 col-xl-5 px-sm-2">
+        <select id="option" class="form-select" aria-label="Buscar por">
           <option selected="">Buscar por: </option>
           <option value="1">Placa</option>
           <option value="2">Fecha</option>
           <option value="3">Estado</option>
         </select>
       </div>
+    </style>
       <div class="col-md-5 col-xl-5 px-sm-2">
         <div id="filt_placa">
           <div class="input-group">
             <span class="input-group-text" id="inputGroup-sizing-sm"><i class="bi bi-search"></i></span>
-            <input type="text" class="form-control" aria-label="Sizing example input">
+            <input type="text" class="form-control" id="placab" aria-label="Sizing example input">
           </div>
         </div>
         <div id="filt_fecha">
@@ -25,20 +26,20 @@
             <div class="col-6">
               <div class="input-group">
                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="bi bi-calendar-date"></i></span>
-                <input type="date" class="form-control" aria-label="Sizing example input">
+                <input type="date" class="form-control" aria-label="Sizing example input" id="datei">
               </div>
             </div>
             <div class="col-6">
               <div class="input-group">
                 <span class="input-group-text" id="inputGroup-sizing-sm"><i class="bi bi-calendar-date"></i></span>
-                <input type="date" class="form-control" aria-label="Sizing example input">
+                <input type="date" class="form-control" aria-label="Sizing example input" id="datef">
               </div>
             </div>
           </div>
         </div>
         <div id="filt_estado">
           <div class="input-group">
-            <select class="form-select" aria-label="Seleccionar estado">
+            <select id = "estadob" class="form-select" aria-label="Seleccionar estado">
               <option selected="">Seleccione estado: </option>
               <option value="1">Terminado</option>
               <option value="2">Pendiente</option>
@@ -60,7 +61,7 @@
           <th scope="col">Estado</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="fil">
         {% for i in datosServidor %}
         <tr>
           <th scope="row">{{i.placa}}</th>
@@ -70,8 +71,11 @@
         <td>{{ i.final}}</td>
         </tr>
         {% endfor %}
+      </div>
       </tbody>
     </table>
   </div>
+
+
 {% endblock %}
 

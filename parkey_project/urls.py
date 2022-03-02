@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from parqueaderos.views import index, bitacora, oficinistas, reportes,createof
+from parqueaderos.views import index, bitacora, oficinistas, reportes,createof,senddatag,notification
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +27,6 @@ urlpatterns = [
     path('oficinistas/', oficinistas, name="oficinistas"),
     path('reportes/', reportes, name="reportes"),
     path('createof/', createof, name="create"),
+    path('sendg/', senddatag, name="senddata"),
+    path('notification/', notification, name="notification")
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
